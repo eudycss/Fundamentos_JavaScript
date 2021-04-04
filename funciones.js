@@ -40,7 +40,7 @@ imprimirNombreYEdad(fredy) */
     
 } */
 
-var x = 4 , y ='4'
+/* var x = 4 , y ='4'
 
 var edwin = {
     nombre: 'Edwin'
@@ -49,4 +49,56 @@ var edwin = {
 var otraPersona={
     ...edwin // obejto literal , Nuevo objeto , es otro lugar de memoria ram
 } 
-var otraP= edwin
+var otraP= edwin */
+
+var edwin= {
+    nombre: 'Sebas',
+    apellido: 'Cabascango',
+    edad: 18,
+    ingeniero: false,
+    cocinero: false,
+    cantante: true,
+    dj: false,
+    guitarrista: false,
+    drone: true
+}
+ function imprimirProfesiones(persona){
+     console.log(`${persona.nombre} es: `)
+     if(persona.ingeniero){
+        console.log('Ingeniero')
+     } else {
+         console.log('No es ingeniero')
+     }
+
+     if(persona.cocinero){
+         console.log('Cocinero')
+     }
+
+     if(persona.dj){
+        console.log('DJ')
+    }
+
+    if(persona.cantante){
+        console.log('Cantante')
+    }
+    if(persona.guitarrista){
+        console.log('Guitarrista')
+    }
+    if(persona.drone){
+        console.log('Piloto Drone')
+    }
+ }
+
+ function imprimirSiEsMayorEdad(persona){
+    if(persona.edad>=18){
+        console.log('Edwin es mayor de edad')
+    } else 
+    {
+        console.log('Edwin es menor de edad')    
+    }
+    
+ }
+ imprimirSiEsMayorEdad(edwin)
+
+/*  imprimirProfesiones(edwin)
+ */
