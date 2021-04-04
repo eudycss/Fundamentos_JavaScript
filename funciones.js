@@ -1,7 +1,8 @@
-var nombre = 'Sacha', edad = 28
+var nombre = 'Sebas' // Variable global
 
-function imprimirEdad(n, e){
-    console.log(`${n} tiene ${e} años`)
+function imprimirNombreEnMayuscula(n){
+    n = n.toLocaleUpperCase()
+    console.log(n)
 }
 
-imprimirEdad('Rena', 26)
+imprimirNombreEnMayuscula(nombre)
