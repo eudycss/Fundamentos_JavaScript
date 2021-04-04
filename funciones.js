@@ -1,7 +1,7 @@
 
 /* var nombre = 'Sebas' // Variable global */
 // Objeto
-var sacha = {
+/* var sacha = {
     nombre: 'Sebas',  // Clave : Valor
     apellido:' Cabascango',
     edad: 26
@@ -19,7 +19,7 @@ function imprimirNombreEnMayuscula(persona){
 }
 
 imprimirNombreEnMayuscula(sacha)
-imprimirNombreEnMayuscula(fredy)
+imprimirNombreEnMayuscula(fredy) */
 /* imprimirNombreEnMayuscula({nombre: 'Pepito'})
 imprimirNombreEnMayuscula({apellido: 'Salazar'})  */// Esto debe dar error
 
@@ -31,11 +31,22 @@ console.log('Hola me llamo '+nombre.toUpperCase()+' y tengo '+edad)
 imprimirNombreYEdad(sacha)
 imprimirNombreYEdad(fredy) */
 
-function cumpleanos(persona){
+/* function cumpleanos(persona){
     return {
         //... es para desglozar  a la persona
         ...persona ,
         edad: persona.edad + 1
     }
     
+} */
+
+var x = 4 , y ='4'
+
+var edwin = {
+    nombre: 'Edwin'
 }
+
+var otraPersona={
+    ...edwin // obejto literal , Nuevo objeto , es otro lugar de memoria ram
+} 
+var otraP= edwin
