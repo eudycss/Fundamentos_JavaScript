@@ -23,10 +23,19 @@ imprimirNombreEnMayuscula(fredy)
 /* imprimirNombreEnMayuscula({nombre: 'Pepito'})
 imprimirNombreEnMayuscula({apellido: 'Salazar'})  */// Esto debe dar error
 
-function imprimirNombreYEdad(persona){
+/* function imprimirNombreYEdad(persona){
 var {nombre, edad}=persona
 console.log('Hola me llamo '+nombre.toUpperCase()+' y tengo '+edad)
 }
 
 imprimirNombreYEdad(sacha)
-imprimirNombreYEdad(fredy)
+imprimirNombreYEdad(fredy) */
+
+function cumpleanos(persona){
+    return {
+        //... es para desglozar  a la persona
+        ...persona ,
+        edad: persona.edad + 1
+    }
+    
+}
