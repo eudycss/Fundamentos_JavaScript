@@ -13,12 +13,9 @@ Persona.prototype.saludar= function(){
 }
 /* let alt1= Persona.this.altura
 console.table("Altura:"+alt1) */
-Persona.prototype.esAlto= function(){
-    if(this.altura>1.8){
-        console.table(`Hola me llamo ${this.nombre} ${this.apellido} y soy alto`)
-    } else{
-        console.table(`Hola me llamo ${this.nombre} ${this.apellido} y no soy alto`)
-    }
+Persona.prototype.esAlto=function () {
+    
+    return this.altura >1.8
     
 }
 
