@@ -1,4 +1,4 @@
-let edwin = {
+var edwin = {
     nombre:'Edwin',
     apellido:'Cabascango',
     edad :28,
@@ -10,19 +10,25 @@ console.log(`Al inicio del año ${edwin.nombre} pesa ${edwin.peso}kg`)
     persona.peso+= 200
 } */
 
-const INCREMENTO_PESO=0.2
+const INCREMENTO_PESO=0.3
 const DIAS_ANIO=365
 const aumentarDePeso= persona =>persona.peso+=INCREMENTO_PESO
  const adelgazar = persona => persona.peso -=INCREMENTO_PESO
-for(let i=1; i<=DIAS_ANIO ; i++){
-    let random = Math.random()
+const comeMucho=()=>Math.random() <0.3
+const realizaDeporte = ()=> Math.random()<0.4
+ const META = edwin.peso -3 //72
+ var dias =0
 
-    if( random <0.25){
-        //Aumenta de peso
-        aumentarDePeso(edwin)
-    } else if (random<0.5){
-        //adelgazar
-        adelgazar(edwin)
-    }
+while(edwin.peso>META){
+if(comeMucho()){
+    //aumentar peso
+    aumentarDePeso(edwin)
 }
-console.log(`Al final del año ${edwin.nombre} pesa ${edwin.peso.toFixed(1)}kg`)
+if(realizaDeporte()){
+    //adelgazar
+    adelgazar(edwin)
+}
+dias +=1
+}
+console.log(`Pasaron ${dias} dias hasat que ${edwin.nombre} adelgazó 3kg `)
+/* console.log(`Al final del año ${edwin.nombre} pesa ${edwin.peso.toFixed(1)}kg`) */
