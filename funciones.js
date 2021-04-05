@@ -54,7 +54,7 @@ var otraP= edwin */
 var edwin= {
     nombre: 'Sebas',
     apellido: 'Cabascango',
-    edad: 18,
+    edad: 19,
     ingeniero: false,
     cocinero: false,
     cantante: true,
@@ -95,9 +95,23 @@ var juan = {
     }
  }
   const MAYORIA_EDAD=18
- function esMayorDeEdad(persona){
+ //Otra forma de escribir funciones
+
+ /* var esMayorDeEdad = function (persona){ // funcion anonima
      return persona.edad >=MAYORIA_EDAD
- }
+ } */
+//Arrow function
+
+    /* const esMayorDeEdad = (persona)=>{
+        return persona.edad>= MAYORIA_EDAD
+    } */
+    // Lo mismo aca abajo
+    /* const esMayorDeEdad = persona=> persona.edad>= MAYORIA_EDAD */
+    //Para desestructurar el cod anterior
+    const esMayorDeEdad = ({edad })=>edad>= MAYORIA_EDAD
+    const esMenorDeEdad = ({edad}) =>edad < MAYORIA_EDAD
+    
+
  function imprimirSiEsMayorEdad(persona){
      if(esMayorDeEdad(persona)){
          console.log(`${persona.nombre } es mayor de edad`)
@@ -105,6 +119,16 @@ var juan = {
         console.log(`${persona.nombre } es menor de edad`)
      }
  }
+function imprimirSiEsMenorEdad(persona){
+    if(esMenorDeEdad(persona)){
+        console.log(`${persona.nombre} es menor de edad`)
+    }
+}
+ function permirtirAcceso(persona){
+     if(!esMayorDeEdad(persona)){
+        console.log('ACCESO DENEGADO')
 
+     }
+ }
 /*  imprimirProfesiones(edwin)
  */
