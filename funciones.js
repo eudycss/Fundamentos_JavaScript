@@ -39,4 +39,26 @@ var personas =[sacha, alan, martin, dario,vicky,paula]
 
 var personasAltas = personas.filter(esAlta)
 var personasBajas=personas.filter(esBaja)
-console.log(personasBajas)
+// Esta funcion si modifica al array original
+//const pasarAltutaACms=(persona)=>{
+    /* persona.altura= persona.altura*100 */
+/*     persona.altura *=100
+    return persona
+} */
+
+// Esta funcion no modifica el array original
+/* const pasarAltutaACms = persona=>{
+    return{
+        ...persona,
+        altura: persona.altura*100
+    }
+} */
+
+// The same funtion above but without return, use parentesis
+const pasarAltutaACms = persona=> ({
+    ...persona,
+    altura: persona.altura*100
+})
+var personasCms=personas.map(pasarAltutaACms)
+/* console.log(personasCms) */
+console.table(personasCms)
