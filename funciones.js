@@ -1,52 +1,19 @@
-// aunque es una clase por debajo es un prototipo
-class Persona{
-constructor(nombre, apellido, altura){
-    this.nombre = nombre
-    this.apellido=apellido
-    this.altura=altura
-}
-saludar(fn){
-    /* let nombre=this.nombre
-    let apellido=this.apellido */
-    /*  otra forma de lo anterior*/
-    let {nombre, apellido}=this
-    console.table(`Hola me llamo ${nombre} ${apellido}`)
-    if(fn){
-        fn(nombre,apellido)
-    }
-}
-esAlto(){
-    return this.altura >1.8
-
-}
+const API_URL='https://swapi.dev/api/'
+const PEOPLE_URL='people/:id'
+/* const lukeUrl=`${API_URL}${PEOPLE_URL.replace(':id',1)}`
+ */
+const opts ={crossDomain:true}
+const onPeopleResponse=function(persona){
+    console.log(`Hola yo soy, ${persona.name}`)
 }
 
-class Desarrollador extends Persona{
-    
-    constructor(nombre,apellido,altura){
-        super(nombre,apellido,altura)  
-    }
-
- saludar(fn){
-    let {nombre, apellido}=this
-    console.table(`Hola, me llamo ${nombre} ${apellido} Soy un Desarrollador`)
-    if(fn){
-        fn(nombre,apellido,true)
-    }
- }
+function obtenerPersonaje(id){
+    const url =`${API_URL}${PEOPLE_URL.replace(':id',id)}`
+    $.get(url, opts,onPeopleResponse)
 }
-
-function responderSaludo(nombre, apellido, esDev){
-    console.table(`Buen dia ${nombre} ${apellido}`)
-    if(esDev){
-        console.table(`Ah mira, no sabia que eres desarrollor/a`)
-    }
-}
-
-
-var sacha = new Persona('Edwin', 'Cabascango',1.92)
-var fredy= new Persona('Fredy', 'Salazar',1.6)
-var cury= new Desarrollador('Cury','Cushcagua', 1,3)
-sacha.saludar() 
-fredy.saludar(responderSaludo)
-cury.saludar(responderSaludo)
+obtenerPersonaje(1)
+obtenerPersonaje(2)
+obtenerPersonaje(3)
+ // primer parametro
+// segundo parametro
+//callback es una funcion que se va a ejecutar en algun futuro, cuando termine el request se va alllmar, puede o no llamarse
