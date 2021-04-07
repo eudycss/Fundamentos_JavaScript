@@ -20,7 +20,18 @@ function obtenerPersonaje(id,callback){
 function onError(id){
     console.log(`Sucedio un error al obtener persona ${id}`)
 }
-obtenerPersonaje(1)
+var ids =[1,2,3,4,5,6,7]
+// cada elemento sea una promesa
+// map toma un array y modifca sus elementos
+/* var promesas=id.map(function(id){
+    return obtenerPersonaje(id)
+}) otra forma de escribir lo anterior*/
+var promesas=ids.map(id=> obtenerPersonaje(id))
+Promise
+.all(promesas)
+.then(personajes=>console.log(personajes))
+.catch(onError)
+/* obtenerPersonaje(1)
 .then((personaje1)=>{
     console.log(`El personaje 1 es ${personaje1.name}`)
     return obtenerPersonaje(2)
@@ -48,9 +59,10 @@ obtenerPersonaje(1)
 .then(personaje7=>{
     console.log(`El personaje 7 es ${personaje7.name}`)
     
-})
+}) */
 
-.catch(onError) // el catch es el mismo para todos
+/* .catch(onError)  */
+ /// el catch es el mismo para todos
 //callback hell
 
 
