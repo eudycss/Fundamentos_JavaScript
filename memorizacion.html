@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorizacion</title>
+</head>
+<body>
+    <script>
+        //6*5*4*3*2*1 = 720
+        // 12*11*10*9*8*7 * !6
+        function factorial(n){
+            // preguntamos is existe una cache
+            if(!this.cache){
+                this.cache={}
+            }
+            debugger
+            if(this.cache[n]){// preguntamos si existe this cahce
+            return this.cache[n]
+
+            }
+            if(n===1){
+                return 1
+            }
+            // la primera vez que ejecutemos un facotorial se ejecuta el sig cod
+            this.cache[n] = n* factorial(n-1) // factorial de 6 va a ser esta cuenta
+            debugger
+            return this.cache[n] // si todavia no existe el calculo no calculado
+            //6*factorial(5)
+            //6*5*factorial(4)
+            //6*5*4*factorial(3)
+            //6*5*4*3*factorial(2)
+            //6*5*4*3*2*factorial(1)
+            //6*5*4*3*2*1
+            // guardamos en una cache
+
+        }
+    </script>
+</body>
+</html>
