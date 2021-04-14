@@ -8,34 +8,14 @@
 </head>
 <body>
     <script>
-        //6*5*4*3*2*1 = 720
-        // 12*11*10*9*8*7 * !6
-        function factorial(n){
-            // preguntamos is existe una cache
-            if(!this.cache){
-                this.cache={}
-            }
-            debugger
-            if(this.cache[n]){// preguntamos si existe this cahce
-            return this.cache[n]
+      function diasEntreFechas(fecha1, fecha2){
+          const unDia= 1000 * 60 *60*24 // milis en un dia
+          const diferencia=Math.abs(fecha1 -fecha2)
+          return Math.floor(diferencia/unDia) 
+      }
 
-            }
-            if(n===1){
-                return 1
-            }
-            // la primera vez que ejecutemos un facotorial se ejecuta el sig cod
-            this.cache[n] = n* factorial(n-1) // factorial de 6 va a ser esta cuenta
-            debugger
-            return this.cache[n] // si todavia no existe el calculo no calculado
-            //6*factorial(5)
-            //6*5*factorial(4)
-            //6*5*4*factorial(3)
-            //6*5*4*3*factorial(2)
-            //6*5*4*3*2*factorial(1)
-            //6*5*4*3*2*1
-            // guardamos en una cache
-
-        }
+      const hoy = new Date()
+      const nacimiento =  new Date(1994,8,7)
     </script>
 </body>
 </html>
